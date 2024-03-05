@@ -3,6 +3,6 @@ from fastapi.responses import FileResponse
 
 app = FastAPI()
 
-@app.get("/")
-async def root():
-    return FileResponse("web/index.html")
+@app.get("/file", response_class = FileResponse)
+def root_html():
+    return "index.html"
